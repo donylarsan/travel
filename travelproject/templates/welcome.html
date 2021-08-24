@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <style>
+        body {
+        font-family: Brush Script MT;
+        background-color: #a596e3;
+        text-align: center;
+        font-size: 300%;
+        color:pink;
+        }
+        .container {
+        padding: 100px;
+
+        }
+        .homebut {
+        background-color: #A74149;
+        color:white;
+        padding: 10px 20px;
+    </style>
+</head>
+<body>
+
+    <div class="container" style="background-image:url({% static 'images/about.jpg' %})">
+        {% if user.is_authenticated %}
+        <h1>Welcome {{user.username}}</h1>
+        {% endif %}
+        <p style="font-family:Arial;font-size:40%;"><a href="/credentials/login/">Login</a> to continue</p>
+    </div>
+
+</body>
+</html>
